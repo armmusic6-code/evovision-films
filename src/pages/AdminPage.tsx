@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import { Lock, LogOut, Shield, FileText, Users, Settings } from 'lucide-react';
+import { Lock, Shield } from 'lucide-react';
 import { useAuth } from '@/lib/AuthContext';
 import { useLanguage } from '@/lib/LanguageContext';
-import { Link } from '@/lib/router';
+import { useRouter } from '@/lib/router';
+import { AdminLayout } from '@/components/admin/AdminLayout';
+import { AdminDashboard } from '@/pages/admin/AdminDashboard';
+import { ContentManager } from '@/pages/admin/ContentManager';
+import { SponsorsManager } from '@/pages/admin/SponsorsManager';
 
 export function AdminPage() {
   const { session, loading, isAdmin, signIn, signOut } = useAuth();
@@ -11,6 +15,9 @@ export function AdminPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+
+  const route = useRouter();
+  const segs = route.segments;
 
   if (loading) {
     return (
@@ -96,50 +103,47 @@ export function AdminPage() {
     );
   }
 
-  const sections = [
-    { icon: FileText, label: t('admin.content'), to: '/admin/content' },
-    { icon: Users, label: t('admin.sponsors'), to: '/admin/sponsors' },
-    { icon: Settings, label: t('admin.settings'), to: '/admin/settings' },
-  ];
+  let content: React.ReactNode;
+  if (segs.length === 1) {
+    content = <AdminDashboard />;
+  } else if (segs[1] === 'films') {
+    content = (
+      <ContentManager
+        contentType="movie"
+        programSlug="kinomas"
+        pageTitle={t('admin.films')}
+        newLabel={t('admin.newFilm')}
+        editLabel={t('admin.editFilm')}
+        folder="films"
+      />
+    );
+  } else if (segs[1] === 'episodes') {
+    content = (
+      <ContentManager
+        contentType="episode"
+        programSlug="kadrich-durs"
+        pageTitle={t('admin.episodes')}
+        newLabel={t('admin.newEpisode')}
+        editLabel={t('admin.editEpisode')}
+        folder="episodes"
+      />
+    );
+  } else if (segs[1] === 'lessons') {
+    content = (
+      <ContentManager
+        contentType="lesson"
+        programSlug="academy"
+        pageTitle={t('admin.lessons')}
+        newLabel={t('admin.newLesson')}
+        editLabel={t('admin.editLesson')}
+        folder="lessons"
+      />
+    );
+  } else if (segs[1] === 'sponsors') {
+    content = <SponsorsManager />;
+  } else {
+    content = <AdminDashboard />;
+  }
 
-  return (
-    <div className="min-h-screen bg-black pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-2xl font-bold text-white">{t('admin.dashboard')}</h1>
-            <p className="text-sm text-white/50 mt-1">{session.user.email}</p>
-          </div>
-          <button
-            onClick={signOut}
-            className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 hover:border-white/20 rounded-lg text-sm text-white/70 hover:text-white transition-colors"
-          >
-            <LogOut className="w-4 h-4" />
-            {t('admin.signOut')}
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {sections.map((s) => (
-            <Link
-              key={s.to}
-              to={s.to}
-              className="p-6 rounded-xl border border-white/10 bg-zinc-900/40 hover:border-red-600/40 hover:bg-red-600/5 transition-all duration-200 group"
-            >
-              <div className="w-10 h-10 rounded-lg bg-red-600/15 flex items-center justify-center mb-4 group-hover:bg-red-600/25 transition-colors">
-                <s.icon className="w-5 h-5 text-red-400" />
-              </div>
-              <h3 className="text-base font-semibold text-white">{s.label}</h3>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-12 p-8 rounded-xl border border-white/10 bg-zinc-900/30">
-          <p className="text-sm text-white/50 leading-relaxed">
-            {t('admin.loading')} — Content management interface coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  return <AdminLayout>{content}</AdminLayout>;
 }

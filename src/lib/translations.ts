@@ -116,7 +116,82 @@ export type TranslationKey =
   | 'lessons.freeBadge'
   | 'lessons.cta'
   | 'lessons.premiumCta'
-  | 'lessons.premiumNote';
+  | 'lessons.premiumNote'
+  | 'admin.backToDashboard'
+  | 'admin.backToSite'
+  | 'admin.films'
+  | 'admin.episodes'
+  | 'admin.lessons'
+  | 'admin.newFilm'
+  | 'admin.newEpisode'
+  | 'admin.newLesson'
+  | 'admin.newSponsor'
+  | 'admin.editFilm'
+  | 'admin.editEpisode'
+  | 'admin.editLesson'
+  | 'admin.editSponsor'
+  | 'admin.slug'
+  | 'admin.type'
+  | 'admin.program'
+  | 'admin.coverImage'
+  | 'admin.heroImage'
+  | 'admin.title'
+  | 'admin.synopsis'
+  | 'admin.description'
+  | 'admin.seoTitle'
+  | 'admin.seoDescription'
+  | 'admin.trailerUrl'
+  | 'admin.telegramLink'
+  | 'admin.year'
+  | 'admin.genre'
+  | 'admin.duration'
+  | 'admin.difficulty'
+  | 'admin.sponsor'
+  | 'admin.noSponsor'
+  | 'admin.featured'
+  | 'admin.published'
+  | 'admin.draft'
+  | 'admin.premium'
+  | 'admin.free'
+  | 'admin.save'
+  | 'admin.saveDraft'
+  | 'admin.publish'
+  | 'admin.unpublish'
+  | 'admin.cancel'
+  | 'admin.delete'
+  | 'admin.edit'
+  | 'admin.create'
+  | 'admin.confirmDelete'
+  | 'admin.saving'
+  | 'admin.deleting'
+  | 'admin.saved'
+  | 'admin.saveError'
+  | 'admin.deleted'
+  | 'admin.deleteError'
+  | 'admin.uploadImage'
+  | 'admin.uploading'
+  | 'admin.uploadError'
+  | 'admin.imagePreview'
+  | 'admin.sponsorName'
+  | 'admin.sponsorLogo'
+  | 'admin.sponsorBanner'
+  | 'admin.sponsorLink'
+  | 'admin.sponsorActive'
+  | 'admin.sponsorLabel'
+  | 'admin.sponsorMessage'
+  | 'admin.totalFilms'
+  | 'admin.totalEpisodes'
+  | 'admin.totalLessons'
+  | 'admin.totalSponsors'
+  | 'admin.publishedItems'
+  | 'admin.draftItems'
+  | 'admin.recentItems'
+  | 'admin.noItems'
+  | 'admin.status'
+  | 'admin.actions'
+  | 'admin.translations'
+  | 'admin.translationsHint'
+  | 'admin.required';
 
 type Dictionary = Record<TranslationKey, string>;
 
@@ -237,6 +312,81 @@ const hy: Dictionary = {
   'lessons.cta': 'Դիտել դասը',
   'lessons.premiumCta': 'Շուտով հասանելի',
   'lessons.premiumNote': 'Պրեմիում բովանդակությունը շուտով կհասանելի լինի։ Վճարային համակարգը դեռ ակտիվ չէ։',
+  'admin.backToDashboard': 'Վերադառնալ վահանակին',
+  'admin.backToSite': 'Բաց կայք',
+  'admin.films': 'Ֆիլմեր',
+  'admin.episodes': 'Դրվագներ',
+  'admin.lessons': 'Դասեր',
+  'admin.newFilm': 'Նոր ֆիլմ',
+  'admin.newEpisode': 'Նոր դրվագ',
+  'admin.newLesson': 'Նոր դաս',
+  'admin.newSponsor': 'Նոր գործընկեր',
+  'admin.editFilm': 'Խմբագրել ֆիլմը',
+  'admin.editEpisode': 'Խմբագրել դրվագը',
+  'admin.editLesson': 'Խմբագրել դասը',
+  'admin.editSponsor': 'Խմբագրել գործընկերոջը',
+  'admin.slug': 'Slug',
+  'admin.type': 'Տեսակ',
+  'admin.program': 'Ծրագիր',
+  'admin.coverImage': 'Կազմի նկար',
+  'admin.heroImage': 'Ֆոնային նկար',
+  'admin.title': 'Կառավարման համակարգ',
+  'admin.synopsis': 'Սինոպսիս',
+  'admin.description': 'Նկարագրություն',
+  'admin.seoTitle': 'SEO վերնագիր',
+  'admin.seoDescription': 'SEO նկարագրություն',
+  'admin.trailerUrl': 'Թրեյլերի URL',
+  'admin.telegramLink': 'Telegram հղում',
+  'admin.year': 'Տարի',
+  'admin.genre': 'Ժանր',
+  'admin.duration': 'Տևողություն',
+  'admin.difficulty': 'Մակարդակ',
+  'admin.sponsor': 'Գործընկեր',
+  'admin.noSponsor': 'Առանց գործընկերոջ',
+  'admin.featured': 'Ընտրված',
+  'admin.published': 'Հրապարակված',
+  'admin.draft': 'Սևագիր',
+  'admin.premium': 'Պրեմիում',
+  'admin.free': 'Անվճար',
+  'admin.save': 'Պահպանել',
+  'admin.saveDraft': 'Պահպանել որպես սևագիր',
+  'admin.publish': 'Հրապարակել',
+  'admin.unpublish': 'Չհրապարակել',
+  'admin.cancel': 'Չեղարկել',
+  'admin.delete': 'Ջնջել',
+  'admin.edit': 'Խմբագրել',
+  'admin.create': 'Ստեղծել',
+  'admin.confirmDelete': 'Վստա՞հ եք, որ ցանկանում եք ջնջել այս տարրը։ Այս գործողությունը հնարավոր չէ հետարկել։',
+  'admin.saving': 'Պահպանվում է...',
+  'admin.deleting': 'Ջնջվում է...',
+  'admin.saved': 'Պահպանված է',
+  'admin.saveError': 'Պահպանման սխալ։ Փորձեք կրկին։',
+  'admin.deleted': 'Ջնջված է',
+  'admin.deleteError': 'Ջնջման սխալ։',
+  'admin.uploadImage': 'Վերբեռնել նկար',
+  'admin.uploading': 'Բեռնվում է...',
+  'admin.uploadError': 'Բեռնման սխալ։',
+  'admin.imagePreview': 'Նախադիտում',
+  'admin.sponsorName': 'Անվանում',
+  'admin.sponsorLogo': 'Լոգո',
+  'admin.sponsorBanner': 'Բաներ',
+  'admin.sponsorLink': 'Հղում',
+  'admin.sponsorActive': 'Ակտիվ',
+  'admin.sponsorLabel': 'Պիտակ',
+  'admin.sponsorMessage': 'Հաղորդագրություն',
+  'admin.totalFilms': 'Ֆիլմերի քանակը',
+  'admin.totalEpisodes': 'Դրվագների քանակը',
+  'admin.totalLessons': 'Դասերի քանակը',
+  'admin.totalSponsors': 'Գործընկերների քանակը',
+  'admin.publishedItems': 'Հրապարակված',
+  'admin.draftItems': 'Սևագրեր',
+  'admin.recentItems': 'Վերջին տարրեր',
+  'admin.noItems': 'Տարրեր չկան',
+  'admin.status': 'Կարգավիճակ',
+  'admin.actions': 'Գործողություններ',
+  'admin.translations': 'Թարգմանություններ',
+  'admin.translationsHint': 'Լրացրեք բոլոր երեք լեզուներով',
+  'admin.required': 'Պարտադիր դաշտ',
 };
 
 const ru: Dictionary = {
@@ -356,6 +506,80 @@ const ru: Dictionary = {
   'lessons.cta': 'Смотреть урок',
   'lessons.premiumCta': 'Скоро доступно',
   'lessons.premiumNote': 'Премиум-контент скоро будет доступен. Платёжная система пока не активна.',
+  'admin.backToDashboard': 'Вернуться к панели',
+  'admin.backToSite': 'Открыть сайт',
+  'admin.films': 'Фильмы',
+  'admin.episodes': 'Эпизоды',
+  'admin.lessons': 'Уроки',
+  'admin.newFilm': 'Новый фильм',
+  'admin.newEpisode': 'Новый эпизод',
+  'admin.newLesson': 'Новый урок',
+  'admin.newSponsor': 'Новый партнёр',
+  'admin.editFilm': 'Редактировать фильм',
+  'admin.editEpisode': 'Редактировать эпизод',
+  'admin.editLesson': 'Редактировать урок',
+  'admin.editSponsor': 'Редактировать партнёра',
+  'admin.slug': 'Slug',
+  'admin.type': 'Тип',
+  'admin.program': 'Программа',
+  'admin.coverImage': 'Обложка',
+  'admin.heroImage': 'Фоновое изображение',
+  'admin.synopsis': 'Синопсис',
+  'admin.description': 'Описание',
+  'admin.seoTitle': 'SEO заголовок',
+  'admin.seoDescription': 'SEO описание',
+  'admin.trailerUrl': 'URL трейлера',
+  'admin.telegramLink': 'Ссылка Telegram',
+  'admin.year': 'Год',
+  'admin.genre': 'Жанр',
+  'admin.duration': 'Длительность',
+  'admin.difficulty': 'Уровень',
+  'admin.sponsor': 'Партнёр',
+  'admin.noSponsor': 'Без партнёра',
+  'admin.featured': 'Избранное',
+  'admin.published': 'Опубликовано',
+  'admin.draft': 'Черновик',
+  'admin.premium': 'Премиум',
+  'admin.free': 'Бесплатно',
+  'admin.save': 'Сохранить',
+  'admin.saveDraft': 'Сохранить как черновик',
+  'admin.publish': 'Опубликовать',
+  'admin.unpublish': 'Снять с публикации',
+  'admin.cancel': 'Отмена',
+  'admin.delete': 'Удалить',
+  'admin.edit': 'Редактировать',
+  'admin.create': 'Создать',
+  'admin.confirmDelete': 'Вы уверены, что хотите удалить этот элемент? Это действие нельзя отменить.',
+  'admin.saving': 'Сохранение...',
+  'admin.deleting': 'Удаление...',
+  'admin.saved': 'Сохранено',
+  'admin.saveError': 'Ошибка сохранения. Попробуйте снова.',
+  'admin.deleted': 'Удалено',
+  'admin.deleteError': 'Ошибка удаления.',
+  'admin.uploadImage': 'Загрузить изображение',
+  'admin.uploading': 'Загрузка...',
+  'admin.uploadError': 'Ошибка загрузки.',
+  'admin.imagePreview': 'Предпросмотр',
+  'admin.sponsorName': 'Название',
+  'admin.sponsorLogo': 'Логотип',
+  'admin.sponsorBanner': 'Баннер',
+  'admin.sponsorLink': 'Ссылка',
+  'admin.sponsorActive': 'Активен',
+  'admin.sponsorLabel': 'Метка',
+  'admin.sponsorMessage': 'Сообщение',
+  'admin.totalFilms': 'Всего фильмов',
+  'admin.totalEpisodes': 'Всего эпизодов',
+  'admin.totalLessons': 'Всего уроков',
+  'admin.totalSponsors': 'Всего партнёров',
+  'admin.publishedItems': 'Опубликовано',
+  'admin.draftItems': 'Черновики',
+  'admin.recentItems': 'Недавние элементы',
+  'admin.noItems': 'Элементов нет',
+  'admin.status': 'Статус',
+  'admin.actions': 'Действия',
+  'admin.translations': 'Переводы',
+  'admin.translationsHint': 'Заполните на всех трёх языках',
+  'admin.required': 'Обязательное поле',
 };
 
 const en: Dictionary = {
@@ -475,6 +699,80 @@ const en: Dictionary = {
   'lessons.cta': 'Watch lesson',
   'lessons.premiumCta': 'Coming soon',
   'lessons.premiumNote': 'Premium content will be available soon. The payment system is not yet active.',
+  'admin.backToDashboard': 'Back to dashboard',
+  'admin.backToSite': 'Open site',
+  'admin.films': 'Films',
+  'admin.episodes': 'Episodes',
+  'admin.lessons': 'Lessons',
+  'admin.newFilm': 'New film',
+  'admin.newEpisode': 'New episode',
+  'admin.newLesson': 'New lesson',
+  'admin.newSponsor': 'New sponsor',
+  'admin.editFilm': 'Edit film',
+  'admin.editEpisode': 'Edit episode',
+  'admin.editLesson': 'Edit lesson',
+  'admin.editSponsor': 'Edit sponsor',
+  'admin.slug': 'Slug',
+  'admin.type': 'Type',
+  'admin.program': 'Program',
+  'admin.coverImage': 'Cover image',
+  'admin.heroImage': 'Background image',
+  'admin.synopsis': 'Synopsis',
+  'admin.description': 'Description',
+  'admin.seoTitle': 'SEO title',
+  'admin.seoDescription': 'SEO description',
+  'admin.trailerUrl': 'Trailer URL',
+  'admin.telegramLink': 'Telegram link',
+  'admin.year': 'Year',
+  'admin.genre': 'Genre',
+  'admin.duration': 'Duration',
+  'admin.difficulty': 'Difficulty',
+  'admin.sponsor': 'Sponsor',
+  'admin.noSponsor': 'No sponsor',
+  'admin.featured': 'Featured',
+  'admin.published': 'Published',
+  'admin.draft': 'Draft',
+  'admin.premium': 'Premium',
+  'admin.free': 'Free',
+  'admin.save': 'Save',
+  'admin.saveDraft': 'Save as draft',
+  'admin.publish': 'Publish',
+  'admin.unpublish': 'Unpublish',
+  'admin.cancel': 'Cancel',
+  'admin.delete': 'Delete',
+  'admin.edit': 'Edit',
+  'admin.create': 'Create',
+  'admin.confirmDelete': 'Are you sure you want to delete this item? This action cannot be undone.',
+  'admin.saving': 'Saving...',
+  'admin.deleting': 'Deleting...',
+  'admin.saved': 'Saved',
+  'admin.saveError': 'Save error. Try again.',
+  'admin.deleted': 'Deleted',
+  'admin.deleteError': 'Delete error.',
+  'admin.uploadImage': 'Upload image',
+  'admin.uploading': 'Uploading...',
+  'admin.uploadError': 'Upload error.',
+  'admin.imagePreview': 'Preview',
+  'admin.sponsorName': 'Name',
+  'admin.sponsorLogo': 'Logo',
+  'admin.sponsorBanner': 'Banner',
+  'admin.sponsorLink': 'Link',
+  'admin.sponsorActive': 'Active',
+  'admin.sponsorLabel': 'Label',
+  'admin.sponsorMessage': 'Message',
+  'admin.totalFilms': 'Total films',
+  'admin.totalEpisodes': 'Total episodes',
+  'admin.totalLessons': 'Total lessons',
+  'admin.totalSponsors': 'Total sponsors',
+  'admin.publishedItems': 'Published',
+  'admin.draftItems': 'Drafts',
+  'admin.recentItems': 'Recent items',
+  'admin.noItems': 'No items',
+  'admin.status': 'Status',
+  'admin.actions': 'Actions',
+  'admin.translations': 'Translations',
+  'admin.translationsHint': 'Fill in all three languages',
+  'admin.required': 'Required field',
 };
 
 const dictionaries: Record<Language, Dictionary> = { hy, ru, en };
