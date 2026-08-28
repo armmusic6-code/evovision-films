@@ -3,12 +3,22 @@ import { Send, Clock, Calendar, Tag, Lock } from 'lucide-react';
 import { BackLink } from '@/components/BackLink';
 import { SponsorBlock } from '@/components/SponsorBlock';
 import { ContentCard } from '@/components/ContentCard';
-import { getContentBySlug, getRelatedContent, getSponsorById } from '@/lib/sampleData';
+import { useContentBySlug, useRelatedContent, useSponsorById } from '@/lib/contentHooks';
 import type { ContentItem } from '@/lib/types';
 
 export function ContentDetailPage({ slug }: { slug: string }) {
   const { lang, t } = useLanguage();
-  const item = getContentBySlug(slug);
+  const { item, loading } = useContentBySlug(slug);
+  const related = useRelatedContent(item);
+  const sponsor = useSponsorById(item?.sponsorId);
+
+  if (loading) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <p className="text-white/40">{t('admin.loading')}</p>
+      </div>
+    );
+  }
 
   if (!item) {
     return (
@@ -21,8 +31,6 @@ export function ContentDetailPage({ slug }: { slug: string }) {
   }
 
   const tr = item.translations[lang];
-  const sponsor = getSponsorById(item.sponsorId);
-  const related = getRelatedContent(item);
   const showComingSoon = item.isPremium && item.programSlug === 'academy';
   const programLabel = t(`nav.${item.programSlug === 'kinomas' ? 'kinomas' : item.programSlug === 'kadrich-durs' ? 'kadrichDurs' : 'academy'}` as never);
 

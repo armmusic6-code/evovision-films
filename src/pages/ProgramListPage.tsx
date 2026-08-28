@@ -1,6 +1,6 @@
 import { useLanguage } from '@/lib/LanguageContext';
 import { ContentCard } from '@/components/ContentCard';
-import { getContentByProgram } from '@/lib/sampleData';
+import { useContentByProgram } from '@/lib/contentHooks';
 
 export function ProgramListPage({
   programSlug,
@@ -13,7 +13,8 @@ export function ProgramListPage({
   subtitle: string;
   heroImage: string;
 }) {
-  const items = getContentByProgram(programSlug);
+  const { t } = useLanguage();
+  const { items, loading } = useContentByProgram(programSlug);
 
   return (
     <div>
@@ -32,14 +33,20 @@ export function ProgramListPage({
 
       <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {items.length > 0 ? (
+          {loading ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className="aspect-[2/3] rounded-xl bg-zinc-900/50 border border-white/5 animate-pulse" />
+              ))}
+            </div>
+          ) : items.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
               {items.map((item) => (
                 <ContentCard key={item.id} item={item} />
               ))}
             </div>
           ) : (
-            <p className="text-center text-white/40 py-20">No content yet</p>
+            <p className="text-center text-white/40 py-20">{t('common.noContent')}</p>
           )}
         </div>
       </section>

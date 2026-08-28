@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { HomePage } from '@/pages/HomePage';
 import { ProgramListPage } from '@/pages/ProgramListPage';
+import { AcademyPage } from '@/pages/AcademyPage';
 import { ContentDetailPage } from '@/pages/ContentDetailPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { ContactPage } from '@/pages/ContactPage';
@@ -48,7 +49,7 @@ function Routes() {
     page = <ProgramListPage programSlug="kadrich-durs" title={t('kadrich.title')} subtitle={t('kadrich.subtitle')} heroImage={sampleImages.clapper} />;
     title = `${t('kadrich.title')} — EvoVision Films`;
   } else if (segs[0] === 'academy' && segs.length === 1) {
-    page = <ProgramListPage programSlug="academy" title={t('academy.title')} subtitle={t('academy.subtitle')} heroImage={sampleImages.editor} />;
+    page = <AcademyPage />;
     title = `${t('academy.title')} — EvoVision Films`;
   } else if ((segs[0] === 'kinomas' || segs[0] === 'kadrich-durs' || segs[0] === 'academy') && segs.length === 2) {
     page = <ContentDetailPage slug={segs[1]} />;

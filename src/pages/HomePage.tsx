@@ -3,14 +3,18 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { Link } from '@/lib/router';
 import { ContentCard } from '@/components/ContentCard';
 import { SectionHeader } from '@/components/SectionHeader';
-import { getFeaturedContent, getContentByProgram, sampleImages } from '@/lib/sampleData';
+import { sampleImages } from '@/lib/sampleData';
+import { useFeaturedContent, useContentByProgram } from '@/lib/contentHooks';
 
 export function HomePage() {
   const { t } = useLanguage();
-  const featured = getFeaturedContent();
-  const kinomasItems = getContentByProgram('kinomas').slice(0, 4);
-  const kadrichItems = getContentByProgram('kadrich-durs').slice(0, 3);
-  const academyItems = getContentByProgram('academy').slice(0, 3);
+  const { items: featured } = useFeaturedContent();
+  const { items: kinomasAll } = useContentByProgram('kinomas');
+  const { items: kadrichAll } = useContentByProgram('kadrich-durs');
+  const { items: academyAll } = useContentByProgram('academy');
+  const kinomasItems = kinomasAll.slice(0, 4);
+  const kadrichItems = kadrichAll.slice(0, 3);
+  const academyItems = academyAll.slice(0, 3);
 
   const programs = [
     { to: '/kinomas', icon: Film, label: t('home.kinomasLabel'), title: t('home.kinomasTitle'), body: t('home.kinomasBody'), cta: t('home.kinomasCta'), image: sampleImages.reel },

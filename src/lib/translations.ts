@@ -103,14 +103,27 @@ export type TranslationKey =
   | 'admin.loading'
   | 'admin.unauthorized'
   | 'admin.loginError'
-  | 'admin.loginPrompt';
+  | 'admin.loginPrompt'
+  | 'lessons.title'
+  | 'lessons.subtitle'
+  | 'lessons.freeLabel'
+  | 'lessons.freeTitle'
+  | 'lessons.freeBody'
+  | 'lessons.premiumLabel'
+  | 'lessons.premiumTitle'
+  | 'lessons.premiumBody'
+  | 'lessons.premiumBadge'
+  | 'lessons.freeBadge'
+  | 'lessons.cta'
+  | 'lessons.premiumCta'
+  | 'lessons.premiumNote';
 
 type Dictionary = Record<TranslationKey, string>;
 
 const hy: Dictionary = {
   'nav.home': 'Գլխավոր',
   'nav.kinomas': 'KinoMas',
-  'nav.kadrichDurs': 'Կադրիչ Դուրս',
+  'nav.kadrichDurs': 'Կադրից դուրս',
   'nav.academy': 'Մոնտաժի Ակադեմիա',
   'nav.about': 'Մեր մասին',
   'nav.contact': 'Կապ',
@@ -128,7 +141,7 @@ const hy: Dictionary = {
   'home.kinomasBody': 'Ֆիլմերի քննարկում և ակնարկներ՝ կինոյի սիրահարների համար։',
   'home.kinomasCta': 'Դիտել կատալոգը',
   'home.kadrichLabel': 'Ծրագիր',
-  'home.kadrichTitle': 'Կադրիչ Դուրս',
+  'home.kadrichTitle': 'Կադրից դուրս',
   'home.kadrichBody': 'Կինոարտադրության ետնաբեմային աշխարհը՝ ռեժիսորներից մինչև մոնտաժողներ։',
   'home.kadrichCta': 'Բացահայտել',
   'home.academyLabel': 'Ծրագիր',
@@ -162,7 +175,7 @@ const hy: Dictionary = {
   'common.noContent': 'Բովանդակություն դեռ չկա',
   'kinomas.title': 'KinoMas',
   'kinomas.subtitle': 'Ֆիլմերի քննարկում, ակնարկներ և ակնարկներ։',
-  'kadrich.title': 'Կադրիչ Դուրս',
+  'kadrich.title': 'Կադրից դուրս',
   'kadrich.subtitle': 'Կինոարվեստի ետնաբեմային աշխարհը։',
   'kadrich.categoryDirectors': 'Ռեժիսորներ',
   'kadrich.categoryScreenwriters': 'Սցենարիստներ',
@@ -211,6 +224,19 @@ const hy: Dictionary = {
   'admin.unauthorized': 'Դուք չունեք այս բաժինը դիտելու իրավունք',
   'admin.loginError': 'Մուտքի սխալ։ Ստուգեք տվյալները։',
   'admin.loginPrompt': 'Մուտք գործեք կառավարման համակարգ',
+  'lessons.title': 'Վիդեո դասեր',
+  'lessons.subtitle': 'Մոնտաժի դասեր՝ բոլոր մակարդակների համար։',
+  'lessons.freeLabel': 'Անվճար դասեր',
+  'lessons.freeTitle': 'Անվճար դասեր',
+  'lessons.freeBody': 'Սկսեք ձեր ուղին մոնտաժի աշխարհում՝ անվճար դասերով։',
+  'lessons.premiumLabel': 'Պրեմիում դասեր',
+  'lessons.premiumTitle': 'Պրեմիում դասեր',
+  'lessons.premiumBody': 'Առաջադեմ տեխնիկաներ և պրոֆեսիոնալ մոտեցումներ փորձառու մոնտաժողների համար։',
+  'lessons.premiumBadge': 'Պրեմիում',
+  'lessons.freeBadge': 'Անվճար',
+  'lessons.cta': 'Դիտել դասը',
+  'lessons.premiumCta': 'Շուտով հասանելի',
+  'lessons.premiumNote': 'Պրեմիում բովանդակությունը շուտով կհասանելի լինի։ Վճարային համակարգը դեռ ակտիվ չէ։',
 };
 
 const ru: Dictionary = {
@@ -317,6 +343,19 @@ const ru: Dictionary = {
   'admin.unauthorized': 'У вас нет прав для просмотра этого раздела',
   'admin.loginError': 'Ошибка входа. Проверьте данные.',
   'admin.loginPrompt': 'Войдите в систему управления',
+  'lessons.title': 'Видеоуроки',
+  'lessons.subtitle': 'Уроки монтажа для всех уровней.',
+  'lessons.freeLabel': 'Бесплатные уроки',
+  'lessons.freeTitle': 'Бесплатные уроки',
+  'lessons.freeBody': 'Начните свой путь в мире монтажа с бесплатными уроками.',
+  'lessons.premiumLabel': 'Премиум-уроки',
+  'lessons.premiumTitle': 'Премиум-уроки',
+  'lessons.premiumBody': 'Продвинутые техники и профессиональные подходы для опытных монтажёров.',
+  'lessons.premiumBadge': 'Премиум',
+  'lessons.freeBadge': 'Бесплатно',
+  'lessons.cta': 'Смотреть урок',
+  'lessons.premiumCta': 'Скоро доступно',
+  'lessons.premiumNote': 'Премиум-контент скоро будет доступен. Платёжная система пока не активна.',
 };
 
 const en: Dictionary = {
@@ -423,6 +462,19 @@ const en: Dictionary = {
   'admin.unauthorized': 'You do not have permission to view this section',
   'admin.loginError': 'Login error. Check your credentials.',
   'admin.loginPrompt': 'Sign in to the management system',
+  'lessons.title': 'Video Lessons',
+  'lessons.subtitle': 'Editing lessons for every level.',
+  'lessons.freeLabel': 'Free Lessons',
+  'lessons.freeTitle': 'Free Lessons',
+  'lessons.freeBody': 'Start your journey in the world of editing with free lessons.',
+  'lessons.premiumLabel': 'Premium Lessons',
+  'lessons.premiumTitle': 'Premium Lessons',
+  'lessons.premiumBody': 'Advanced techniques and professional approaches for experienced editors.',
+  'lessons.premiumBadge': 'Premium',
+  'lessons.freeBadge': 'Free',
+  'lessons.cta': 'Watch lesson',
+  'lessons.premiumCta': 'Coming soon',
+  'lessons.premiumNote': 'Premium content will be available soon. The payment system is not yet active.',
 };
 
 const dictionaries: Record<Language, Dictionary> = { hy, ru, en };
